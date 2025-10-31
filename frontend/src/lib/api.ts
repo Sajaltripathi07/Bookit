@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+const baseURL = 'https://bookit-backend-0zhi.onrender.com';
 
 export const api = axios.create({ baseURL, timeout: 10000 });
 
