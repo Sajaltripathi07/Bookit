@@ -1,0 +1,68 @@
+// Datasource
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Generator
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Experience {
+  id               String   @id @default(uuid())
+  title            String
+  description      String
+  experienceDetails String   @db.Text @default("")
+  location         String
+  priceCents       Int
+  coverImageUrl    String
+  galleryImageUrls String[]
+  rating           Float    @default(4.7)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  slots            Slot[]
+  bookings         Booking[]
+}
+
+model Slot {
+  id           String     @id @default(uuid())
+  experience   Experience @relation(fields: [experienceId], references: [id])
+  experienceId String
+  startTime    DateTime
+  endTime      DateTime
+  capacity     Int
+
+  bookings     Booking[]
+}
+
+model Booking {
+  id           String     @id @default(uuid())
+  experience   Experience @relation(fields: [experienceId], references: [id])
+  experienceId String
+  slot         Slot       @relation(fields: [slotId], references: [id])
+  slotId       String
+  name         String
+  email        String
+  promoCode    String?
+  createdAt    DateTime   @default(now())
+
+  @@unique([slotId, email])
+}
+
+enum PromoType {
+  PERCENT
+  FLAT
+}
+
+model PromoCode {
+  code         String   @id
+  type         PromoType
+  percent      Int?
+  amountCents  Int?
+  active       Boolean  @default(true)
+  createdAt    DateTime @default(now())
+}
+
+

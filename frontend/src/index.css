@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-gradient-to-b from-slate-50 to-white text-slate-900 font-sans;
+}
+
+.container-page {
+  @apply max-w-6xl mx-auto px-4;
+}
+
+
