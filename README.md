@@ -3,6 +3,7 @@ Bookit – Travel Experience Booking App
 React + Tailwind frontend, Node + Express backend, PostgreSQL (Prisma) database.
 
 Note: For now, it works best on computers and laptops.
+
 Future Plan: Make it mobile-friendly so it runs smoothly on all devices.
 
 ## Tech
