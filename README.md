@@ -24,13 +24,13 @@ Prerequisites:
 - PostgreSQL 14+
 
 1) Backend
-- Create `server/.env` with:
+- Create `backend/.env` with:
   - `DATABASE_URL=postgresql://USER:PASSWORD@localhost:5432/bookit?schema=public`
   - `CORS_ORIGIN=http://localhost:5173`
   - `PORT=4000`
 - Install deps and run migrations:
 ```
-cd server
+cd backend
 npm i
 npm run prisma:generate
 npm run prisma:migrate -- --name init
@@ -41,7 +41,7 @@ Server runs on `http://localhost:4000`. Test `GET /health`.
 
 2) Frontend
 ```
-cd client
+cd frontend
 npm i
 npm run dev
 ```
@@ -60,7 +60,7 @@ Bookings are capacity-safe with a unique constraint `(slotId, email)` and transa
 
 ## Deployment
 - Backend: Render + database: Neon (postresql)
-- Frontend: Vercel/Netlify
+- Frontend: Vercel
 - Backend env: `DATABASE_URL`, `PORT`, `CORS_ORIGIN`
 - Frontend env: `VITE_API_URL`
 
