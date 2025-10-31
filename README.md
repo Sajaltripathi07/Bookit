@@ -55,7 +55,7 @@ Open the Vite URL (usually `http://localhost:5173`).
 Bookings are capacity-safe with a unique constraint `(slotId, email)` and transactional checks.
 
 ## Deployment
-- Backend: Render/Railway/Fly/Heroku with Postgres add-on
+- Backend: Render + database: Neon (postresql)
 - Frontend: Vercel/Netlify
 - Backend env: `DATABASE_URL`, `PORT`, `CORS_ORIGIN`
 - Frontend env: `VITE_API_URL`
