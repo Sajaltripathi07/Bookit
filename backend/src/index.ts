@@ -8,8 +8,13 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 4000;
 
+app.use(
+  cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  })
+);
 app.use(helmet());
-app.use(cors({ origin: process.env.CORS_ORIGIN?.split(',') || ['*'] }));
 app.use(express.json());
 
 app.get('/health', (_req, res) => {
