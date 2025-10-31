@@ -13,8 +13,8 @@ Future Plan: Make it mobile-friendly so it runs smoothly on all devices.
 
 ## Monorepo Structure
 ```
-client/   # React app
-server/   # Express API + Prisma
+frontend/   # React app
+backend/   # Express API + Prisma
 ```
 
 ## Local Setup
