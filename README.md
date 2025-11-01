@@ -1,4 +1,5 @@
-Bookit – Travel Experience Booking App
+Bookit –  web application where users can explore travel experiences, 
+select available slots, and complete bookings.
 
 React + Tailwind frontend, Node + Express backend, PostgreSQL (Prisma) database.
 
