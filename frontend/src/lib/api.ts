@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const baseURL = 'https://bookit-backend-0zhi.onrender.com';
 
-export const api = axios.create({ baseURL, timeout: 10000 });
+export const api = axios.create({ baseURL, timeout: 60000 });
 
 export type ExperienceListItem = {
   id: string;
